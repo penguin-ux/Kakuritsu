@@ -79,7 +79,7 @@ function rollDice() {
     var resultContainer = document.getElementById('result-container');
 
     // ゲームの結果とシェア用リンクを含めたHTMLを設定
-    var tweetText = encodeURIComponent("1/"+ diceNumber + " を達成しました！\nサイコロを振った回数:" + rollCount + "回\n確率の限界\nURL");
+    var tweetText = encodeURIComponent("1/"+ diceNumber + " を達成しました！\nサイコロを振った回数:" + rollCount + "回\n確率の限界\nhttps://penguin-ux.github.io/Kakuritsu/");
 
     resultContainer.innerHTML =
     `<!-- Twitterリンク -->
