@@ -67,7 +67,8 @@ function rollDice() {
     diceValues.push(diceValue);
 
     const diceDiv = document.createElement('div');
-    diceDiv.classList.add('dice', dice-${diceValue});
+    diceDiv.classList.add('dice');
+    diceDiv.classList.add(`dice-${diceValue}`); // サイコロの目に応じたクラスを追加
 
     // サイコロの目に応じてドットを追加
     for (let j = 0; j < diceValue; j++) {
