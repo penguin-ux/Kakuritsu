@@ -11,6 +11,7 @@ document.getElementById('roll-button').addEventListener('click', function() {
 // SE音を再生する関数
 function playSE(soundFile) {
   const audio = new Audio(soundFile);
+  audio.muted = false; // ミュート解除
   audio.play().catch(error => {
     console.error('音声の再生に失敗しました:', error);
   });
