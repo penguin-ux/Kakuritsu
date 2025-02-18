@@ -40,7 +40,7 @@ function addDiceButtonClick() {
   document.getElementById('add-dice-container').innerHTML = '';
 
   // SE音を鳴らす
-  playSE('決定ボタンを押す44.mp3');
+  playSE('決定ボタンを押す44.mp3');
 
 }
 
@@ -92,7 +92,7 @@ function rollDice() {
     document.getElementById('roll-button').style.display = 'none';  // ボタンを非表示にする
 
     // おめでとうSE音を鳴らす
-    playSE('決定ボタンを押す4.mp3');
+    playSE('決定ボタンを押す4.mp3');
 
     // 「サイコロを増やす」ボタンがまだ表示されていない場合のみ表示する
     if (!document.getElementById('add-dice-button')) {
