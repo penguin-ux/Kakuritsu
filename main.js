@@ -17,11 +17,6 @@ function playSE(soundFile) {
   });
 }
 
-// ボタンをクリックしたタイミングでSEを再生
-document.getElementById('roll-button').addEventListener('click', function() {
-  playSE('決定ボタンを押す44.mp3');
-});
-
 // サイコロを増やすボタンのクリックイベント
 function addDiceButtonClick() {
   diceCount++;  // サイコロの数を増やす
