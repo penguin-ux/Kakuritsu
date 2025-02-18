@@ -8,13 +8,20 @@ document.getElementById('roll-button').addEventListener('click', function() {
   rollDice();
 });
 
-// SE音を再生する関数
+// 事前にオーディオオブジェクトを作成
+const audioCache = {
+  "決定ボタンを押す44.mp3": new Audio("決定ボタンを押す44.mp3"),
+  "カーソル移動12.mp3": new Audio("カーソル移動12.mp3"),
+  "決定ボタンを押す4.mp3": new Audio("決定ボタンを押す4.mp3"),
+};
+
 function playSE(soundFile) {
-  const audio = new Audio(soundFile);
-  audio.muted = false; // ミュート解除
-  audio.play().catch(error => {
-    console.error('音声の再生に失敗しました:', error);
-  });
+  if (audioCache[soundFile]) {
+    audioCache[soundFile].currentTime = 0; // 再生位置をリセット
+    audioCache[soundFile].play().catch(error => {
+      console.error('音声の再生に失敗しました:', error);
+    });
+  }
 }
 
 // サイコロを増やすボタンのクリックイベント
