@@ -87,15 +87,32 @@ function rollDice() {
   if (new Set(diceValues).size === 1) {  
     document.getElementById('message-container').textContent = "おめでとうございます！";
 
-    // 結果を表示する要素を取得
-    var resultContainer = document.getElementById('result-container');
-    // ゲームの結果とシェア用リンクを含めたHTMLを設定
-    var tweetText = encodeURIComponent("1/"+ diceNumber + " を達成しました！\nサイコロを振った回数:" + rollCount + "回\n確率の限界\nhttps://penguin-ux.github.io/Kakuritsu/");
+        // スクリーンショットを取得
+    html2canvas(document.getElementById('dice-container')).then(canvas => {
+      canvas.toBlob(blob => {
+        const screenshotURL = URL.createObjectURL(blob);
 
-    <!-- Twitterリンク -->
-    resultContainer.innerHTML = `<a href="https://twitter.com/intent/tweet?text=${tweetText}" target="_blank" class="share-link">
-      <img src="logo.svg" alt="Twitter" class="social-icon">
-    </a>`;
+        // ダウンロード用リンクを作成
+        const downloadLink = document.createElement('a');
+        downloadLink.href = screenshotURL;
+        downloadLink.download = 'dice_result.png';
+        downloadLink.textContent = "スクリーンショットをダウンロード";
+        document.getElementById('result-container').appendChild(downloadLink);
+
+        // Twitter用の投稿リンク
+        const tweetText = encodeURIComponent(`1/${diceNumber} を達成しました！\nサイコロを振った回数: ${rollCount}回\n#確率の限界`);
+        const tweetURL = `https://twitter.com/intent/tweet?text=${tweetText}&url=${screenshotURL}`;
+
+        // シェアボタンを作成
+        const twitterLink = document.createElement('a');
+        twitterLink.href = tweetURL;
+        twitterLink.target = '_blank';
+        twitterLink.classList.add('share-link');
+        twitterLink.innerHTML = '<img src="logo.svg" alt="Twitter" class="social-icon">';
+
+        document.getElementById('result-container').appendChild(twitterLink);
+      }, 'image/png');
+    });
 
     // 「サイコロを振る」ボタンを非表示にする
     document.getElementById('roll-button').style.display = 'none';  
