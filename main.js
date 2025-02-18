@@ -93,9 +93,11 @@ function rollDice() {
     var tweetText = encodeURIComponent("1/"+ diceNumber + " を達成しました！\nサイコロを振った回数:" + rollCount + "回\n確率の限界\nhttps://penguin-ux.github.io/Kakuritsu/");
 
     <!-- Twitterリンク -->
-    resultContainer.innerHTML = <a href="https://twitter.com/intent/tweet?text=${tweetText}" target="_blank" class="share-link">
-      <img src="logo.svg" alt="Twitter" class="social-icon">
-    </a>;
+    resultContainer.innerHTML =
+      `<!-- Twitterリンク -->
+    <a href="https://twitter.com/intent/tweet?text=${tweetText}" target="_blank" class="share-link">
+      <img src="logo.svg" alt="Twitter" alt="X" class="social-icon">
+    </a>`
 
     // 「サイコロを振る」ボタンを非表示にする
     document.getElementById('roll-button').style.display = 'none';  
