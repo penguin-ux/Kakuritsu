@@ -67,7 +67,7 @@ function rollDice() {
     diceValues.push(diceValue);
 
     const diceDiv = document.createElement('div');
-    diceDiv.classList.add('dice', `dice-${diceValue}`);
+    diceDiv.classList.add('dice', dice-${diceValue});
 
     // サイコロの目に応じてドットを追加
     for (let j = 0; j < diceValue; j++) {
@@ -87,17 +87,15 @@ function rollDice() {
   if (new Set(diceValues).size === 1) {  
     document.getElementById('message-container').textContent = "おめでとうございます！";
 
-  // 結果を表示する要素を取得
+    // 結果を表示する要素を取得
     var resultContainer = document.getElementById('result-container');
     // ゲームの結果とシェア用リンクを含めたHTMLを設定
     var tweetText = encodeURIComponent("1/"+ diceNumber + " を達成しました！\nサイコロを振った回数:" + rollCount + "回\n確率の限界\nhttps://penguin-ux.github.io/Kakuritsu/");
 
     <!-- Twitterリンク -->
-    resultContainer.innerHTML =
-      `<!-- Twitterリンク -->
-    <a href="https://twitter.com/intent/tweet?text=${tweetText}" target="_blank" class="share-link">
-      <img src="logo.svg" alt="Twitter" alt="X" class="social-icon">
-    </a>`
+    resultContainer.innerHTML = <a href="https://twitter.com/intent/tweet?text=${tweetText}" target="_blank" class="share-link">
+      <img src="logo.svg" alt="Twitter" class="social-icon">
+    </a>;
 
     // 「サイコロを振る」ボタンを非表示にする
     document.getElementById('roll-button').style.display = 'none';  
@@ -113,4 +111,3 @@ function rollDice() {
     }
   }
 }
-
