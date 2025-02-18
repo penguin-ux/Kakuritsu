@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>確率の限界</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="title"><h1>確率の限界</h1></div>
+    <div class="counter">振った回数: <span id="rollCount">0</span></div>
+    <div class="counter">現在の確率: 1/<span id="diceNumber">6</span></div>
+    <div id="dice-container" class="dice-container">
+      <!-- サイコロがここに表示されます -->
+    </div>
+    <div id="button-container">
+      <button id="roll-button">サイコロを振る</button>
+    </div>
+    <div id="message-container"></div>
+    <div id="add-dice-container" class="add-dice-container">
+      <!-- サイコロを増やすボタン -->
+    </div>
+    <div id="result-container"></div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

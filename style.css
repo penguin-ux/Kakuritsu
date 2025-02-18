@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "aoyagireisyosimo";
+    src: url("aoyagireisyosimo_otf_2_01.otf") format("opentype");
+  }
+  
+/* ベースのスタイル */
+body {
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    background-color: #006600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .title {
+    width: 400px;
+    height: 80px;
+    border-bottom: 2px solid #ff4444;
+    margin: 0 auto 30px;
+    font-family: "aoyagireisyosimo";
+    font-size: 2em;
+  }
+  
+  .game-container {
+    text-align: center;
+  }
+  
+  .dice-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 60px 20px;
+  }
+  
+  .dice {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin: 10px;
+    background-color: #fff;
+    border: 2px solid #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .dice .dot {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .dice-1 .dot {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+  }
+  
+  .dice-2 .dot:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .dice-2 .dot:nth-child(2) {
+    bottom: 20%;
+    right: 20%;
+  }
+  
+  .dice-3 .dot:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .dice-3 .dot:nth-child(2) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .dice-3 .dot:nth-child(3) {
+    bottom: 20%;
+    right: 20%;
+  }
+  
+  .dice-4 .dot:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .dice-4 .dot:nth-child(2) {
+    top: 20%;
+    right: 20%;
+  }
+  
+  .dice-4 .dot:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+  }
+  
+  .dice-4 .dot:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+  }
+  
+  .dice-5 .dot:nth-child(1) {
+    top: 20%;
+    left: 20%;
+  }
+  
+  .dice-5 .dot:nth-child(2) {
+    top: 20%;
+    right: 20%;
+  }
+  
+  .dice-5 .dot:nth-child(3) {
+    bottom: 20%;
+    left: 20%;
+  }
+  
+  .dice-5 .dot:nth-child(4) {
+    bottom: 20%;
+    right: 20%;
+  }
+  
+  .dice-5 .dot:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .dice-6 .dot:nth-child(1) {
+    top: 18%;
+    left: 20%;
+  }
+  
+  .dice-6 .dot:nth-child(2) {
+    top: 18%;
+    right: 20%;
+  }
+  
+  .dice-6 .dot:nth-child(3) {
+    top: 68%;
+    left: 20%;
+  }
+  
+  .dice-6 .dot:nth-child(4) {
+    top: 68%;
+    right: 20%;
+  }
+  
+  .dice-6 .dot:nth-child(5) {
+    top: 43%;
+    left: 20%;
+  }
+  
+  .dice-6 .dot:nth-child(6) {
+    top: 43%;
+    right: 20%;
+  }
+  
+  
+  button {
+    padding: 10px 20px;
+    background-color: #FFFF66;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #d1d155;
+  }
+
+  button:active {
+    transform: translateY(4px);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .counter {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* ボタン位置を動かす */
+  #button-container {
+    position: relative;
+  }
+  
+  #button-container.disabled {
+    position: absolute;
+    top: 200px; /* ボタンの位置を下にずらす */
+  }
+  
+  #message-container {
+    margin-top: 60px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #00ffff;
+  }
+  
+  .add-dice-container {
+    margin-top: 60px;
+  }
+  
+  #add-dice-button {
+    padding: 10px 20px;
+    background-color: #00ffff;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  #add-dice-button:hover {
+    background-color: #01d1d1;
+  }
+  
+  .share-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 30px 10px 10px;
+    background-color: black;
+    padding: 11px;
+    border-radius: 10px;
+  }
+  
+  .share-link img.social-icon {
+    width: 30px; /* ロゴの幅 */
+    height: 30px; /* ロゴの高さ */
+    margin-right: 0px; /* テキストとのスペース */
+  }
+  
+  .share-link:hover {
+    background-color: #007bb5; /* Instagramのホバーカラー */
+  }
+  
